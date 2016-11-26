@@ -187,7 +187,7 @@ public final class NewProjectUtils {
                     return Problem.severe(NewProjectStrings.getCannotCreateFolderHere());
                 }
                 
-                if (Utilities.isUnix() && projectDir.getAbsolutePath().startsWith("/tmp")) {
+                if (Utilities.isUnix() && projectDir.getAbsolutePath().startsWith("/tmp/")) {
                     return Problem.severe(NewProjectStrings.getCannotCreateFolderHere());
                 }
 
