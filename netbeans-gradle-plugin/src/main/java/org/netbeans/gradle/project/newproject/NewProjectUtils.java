@@ -186,6 +186,10 @@ public final class NewProjectUtils {
                 if (Utilities.isWindows() && projectDir.getAbsolutePath().startsWith("\\\\")) {
                     return Problem.severe(NewProjectStrings.getCannotCreateFolderHere());
                 }
+                
+                if (Utilities.isUnix() && projectDir.getAbsolutePath().startsWith("/tmp")) {
+                    return Problem.severe(NewProjectStrings.getCannotCreateFolderHere());
+                }
 
                 if (projectDir.exists()) {
                     return Problem.severe(NewProjectStrings.getDirectoryAlreadyExists());
